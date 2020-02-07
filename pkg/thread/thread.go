@@ -2,7 +2,6 @@ package thread
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 
 	"github.com/PuerkitoBio/goquery"
@@ -13,17 +12,13 @@ import (
 )
 
 type Thread struct {
-	Title string      `json:"title"`
-	Posts []post.Post `json:"posts"`
+	Title string      `yaml:"title" json:"title"`
+	Posts []post.Post `yaml:"posts" json:"posts"`
 }
 
 type result struct {
 	thread Thread
 	error  error
-}
-
-func (t *Thread) toString() string {
-	return fmt.Sprintf("%s\n\n%s", t.Title, t.Posts)
 }
 
 // GetAll loads all URLs from the config

@@ -1,19 +1,13 @@
 package post
 
 import (
-	"fmt"
-
 	"github.com/PuerkitoBio/goquery"
 )
 
 type Post struct {
-	UserName  string `json:"user_name"`
-	TimeStamp string `json:"time_stamp"`
-	Content   string `json:"content"`
-}
-
-func (p *Post) ToString() string {
-	return fmt.Sprintf("%s | %s\n%s\n", p.UserName, p.TimeStamp, p.Content)
+	UserName  string `yaml:"user_name" json:"user_name"`
+	TimeStamp string `yaml:"time_stamp" json:"time_stamp"`
+	Content   string `yaml:"content" json:"content"`
 }
 
 func GetAll(doc *goquery.Document) []Post {
