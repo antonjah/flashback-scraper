@@ -16,3 +16,4 @@ URLs:
 * ~~Tidy output~~
 * ~~Output to file~~
 * Handle multi-page threads
+* Implement filter by date interval
